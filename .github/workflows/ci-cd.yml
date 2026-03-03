@@ -15,7 +15,7 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
       - name: build spring app
-        working-directory: ./springboot
+        working-directory: ./springboot/app/
         run : mvn clean package
       - name: setup node for angular
         uses: actions/setup-node@v3
