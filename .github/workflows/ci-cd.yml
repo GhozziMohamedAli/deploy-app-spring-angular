@@ -42,9 +42,7 @@ jobs:
         run : docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/angular-app:latest	
       - name : docker compose launching
         working-directory: ./
-        run : |
-              docker-compose down
-              docker-compose up -d
-	      
-        
+        run: | 
+          docker-compose down
+          docker-compose up -d  
         
