@@ -21,6 +21,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
+      - name: npm install
+        working-directory: ./angular-app
+        run: npm install --force
       - name: build angular
         working-directory: ./angular-app
         run: npm run build --force
