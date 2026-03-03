@@ -46,6 +46,6 @@ jobs:
       - name : docker compose launching
         working-directory: ./
         run: | 
-          docker-compose down
-          docker-compose up -d  
+          docker compose down
+          docker compose up -d  
     
