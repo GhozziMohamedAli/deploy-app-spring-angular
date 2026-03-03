@@ -32,9 +32,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name : backend image build
         working-directory: ./spring-app
-        run : docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/spring-app:latest
+        run : docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/spring-app:latest .
       - name : frontend image build  	
-        run : docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/angular-app:latest
+        working-directory: ./angular-app
+        run : docker build -t docker.io/${{ secrets.DOCKERHUB_USERNAME }}/angular-app:latest .
       - name : back end image push
         run : docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/spring-app:latest
       - name : front end image push
