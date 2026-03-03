@@ -38,7 +38,11 @@ jobs:
         run : docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/spring-app:latest
       - name : front end image push
         run : docker push docker.io/${{ secrets.DOCKERHUB_USERNAME }}/angular-app:latest
-	      working-directory : ./spring-app
+	working-directory : ./spring-app
+      - name : docker compose launching
+        working-directory: ./
+        run : docker-compose down
+              docker-compose up -d
 	      
         
         
