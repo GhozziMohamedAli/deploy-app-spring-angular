@@ -1,11 +1,11 @@
 version: "3.3"
 services:
   angular-app:
-    image: gh0zzi/angular-app:latest
+    image: gh0zzi/angular-app
     ports:
       - "0.0.0.0:4200:80"      
   spring-boot-app:
-    image: gh0zzi/spring-app:latest
+    image: gh0zzi/spring-app
     ports:
       - "0.0.0.0:8081:8081"
     environment:
